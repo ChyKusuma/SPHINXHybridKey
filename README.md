@@ -32,48 +32,48 @@ The `SPHINXKey` namespace provides functions for generating key pairs, calculati
 
 ### Functions
 
-- The code defines a function called performX25519KeyExchange that performs the X25519 key exchange given a private key, public key, and a buffer to store the shared key.
+- The code defines a function called performX25519KeyExchange that performs the `X25519` key exchange given a private key, public key, and a buffer to store the shared key.
 
-- It defines a structure called HybridKeypair, which holds the merged key pair consisting of a Kyber768 key pair and an X25519 key pair, as well as PKE key pair, and a random number generator.
+- It defines a structure called HybridKeypair, which holds the merged key pair consisting of a Kyber768 key pair and an `X25519` key pair, as well as PKE key pair, and a random number generator.
 
-- The function generate_hybrid_keypair generates a hybrid key pair by generating a Kyber768 key pair, an X25519 key pair, and a PKE key pair using appropriate functions. It returns the generated hybrid key pair.
+- The function `generate_hybrid_keypair` generates a hybrid key pair by generating a `Kyber768` key pair, an `X25519` key pair, and a PKE key pair using appropriate functions. It returns the generated hybrid key pair.
 
-- The function deriveMasterKeyAndChainCode is used to derive a master private key and chain code from a given seed using the HMAC-SHA512 function. It returns the derived master private key and chain code as a pair.
+- The function deriveMasterKeyAndChainCode is used to derive a master private key and chain code from a given seed using the `HMAC-SHA512` function. It returns the `derived master private key` and `chain code` as a pair.
 
-- There are several utility functions defined, such as deriveKeyHMAC_SHA512 to derive a key using HMAC-SHA512, hashSWIFFTX512 to calculate the SWIFFTX-512 hash of data, and generateRandomNonce to generate a random nonce.
+- There are several utility functions defined, such as `deriveKeyHMAC_SHA512` to derive a key using `HMAC-SHA512`, `hashSWIFFTX512` to calculate the `SWIFFTX-512` hash of data, and `generateRandomNonce` to generate a random nonce.
 
-- The function deriveKeyHKDF derives a key using the HKDF (HMAC-based Key Derivation Function) algorithm with SHA256 as the default hash function.
+- The function `deriveKeyHKDF` derives a key using the `HKDF` (HMAC-based Key Derivation Function) algorithm with `SHA256` as the default hash function.
 
-- The function hash calculates the SWIFFTX-256 hash of a given input.
+- The function hash calculates the `SWIFFTX-256` hash of a given input.
 
 - The function generateKeyPair generates a random private key and calculates the corresponding public key by hashing the private key.
 
 - The function generateAddress generates an address from a given public key by hashing the public key and taking the first 20 bytes of the hash.
 
-- The function requestDigitalSignature requests a digital signature for a given data using the provided hybrid key pair.
+- The function `requestDigitalSignatur`e requests a digital signature for a given data using the provided hybrid key pair.
 
-- The functions encryptMessage and decryptMessage are used to encrypt and decrypt a message, respectively, using the Kyber768 KEM (Key Encapsulation Mechanism).
+- The functions encryptMessage and decryptMessage are used to encrypt and decrypt a message, respectively, using the `Kyber768` KEM (Key Encapsulation Mechanism).
 
-- The functions encapsulateHybridSharedSecret and decapsulateHybridSharedSecret are used to encapsulate and decapsulate a shared secret using the hybrid KEM, which combines X25519 and Kyber768.
+- The functions `encapsulateHybridSharedSecret` and `decapsulateHybridSharedSecret` are used to encapsulate and decapsulate a shared secret using the `hybrid KEM`, which combines `X25519` and `Kyber768`.
 
 This code provides a set of functions and structures to support hybrid key generation, key exchange, encryption, decryption, and other cryptographic operations.
 
 
 #### The interaction and collaboration between Hybrid_Key.hpp and [SPHINXKey](https://github.com/ChyKusuma/SPHINXHybridKey) can be summarized as follows:
 
-- In Key.cpp, the generate_hybrid_keypair() function is defined, which is responsible for generating a hybrid key pair. It internally calls functions from Hybrid_key.hpp to generate the Kyber768 key pair (generate_kyber768_key_pair()) and the X25519 key pair (generate_x25519_key_pair()). It also generates the PKE key pair and initializes the PRNG for key generation. Finally, it returns the hybrid key pair.
+- In Key.cpp, the `generate_hybrid_keypair()` function is defined, which is responsible for generating a hybrid key pair. It internally calls functions from Hybrid_key.hpp to generate the Kyber768 key pair `(generate_kyber768_key_pair())` and the X25519 key pair `(generate_x25519_key_pair())`. It also generates the PKE key pair and initializes the `PRNG` for key generation. Finally, it returns the hybrid key pair.
 
-- The performX25519KeyExchange() function in Key.cpp is used to perform the X25519 key exchange. It takes the private and public keys as inputs and uses the performX25519KeyExchange() function from Hybrid_key.hpp to perform the actual key exchange.
+- The `performX25519KeyExchange()` function in Key.cpp is used to perform the X25519 key exchange. It takes the private and public keys as inputs and uses the `performX25519KeyExchange()` function from Hybrid_key.hpp to perform the actual key exchange.
 
-- The performHybridKeyExchange() function in Key.cpp combines the X25519 and Kyber768 key pairs to perform a hybrid key exchange. It calls the performX25519KeyExchange() function and also uses the Kyber768 KEM (kyber768_kem::encapsulate) to encapsulate the shared key. The encapsulated key is stored in the shared_key parameter.
+- The `performHybridKeyExchange()` function in Key.cpp combines the X25519 and Kyber768 key pairs to perform a hybrid key exchange. It calls the `performX25519KeyExchange()` function and also uses the `Kyber768` KEM `(kyber768_kem::encapsulate)` to encapsulate the shared key. The encapsulated key is stored in the shared_key parameter.
 
-- The merge_key_pair() function in Key.cpp merges the X25519 and Kyber768 key pairs into a single hybrid key pair. It combines the X25519 public key and the Kyber768 private key, and generates the Kyber768 public key from the private key. The merged key pair is returned.
+- The `merge_key_pair()` function in Key.cpp merges the X25519 and Kyber768 key pairs into a single hybrid key pair. It combines the `X25519 public key` and the `Kyber768 private key`, and generates the Kyber768 public key from the private key. The merged key pair is returned.
 
-- The generate_and_perform_key_exchange() function in Key.cpp demonstrates the complete process of generating a hybrid key pair and performing the hybrid key exchange. It calls generate_hybrid_keypair() to generate the key pair and then calls performHybridKeyExchange() to perform the key exchange using the generated key pair.
+- The `generate_and_perform_key_exchange()` function in Key.cpp demonstrates the complete process of generating a hybrid key pair and performing the hybrid key exchange. It calls `generate_hybrid_keypair()` to generate the key pair and then calls `performHybridKeyExchange()` to perform the key exchange using the generated key pair.
 
-- The generateAddress() function in Hybrid_key.hpp is used to generate a smart contract address based on a public key and contract name. It is called from the printKeyPair() function in Key.cpp to generate the address for a given public key.
+- The `generateAddress()` function in Hybrid_key.hpp is used to generate a smart contract address based on a public key and contract name. It is called from the `printKeyPair()` function in Key.cpp to generate the address for a given public key.
 
-- The calculatePublicKey() function in Key.cpp calculates the public key from a given private key. It internally uses functions from Hybrid_key.hpp to generate the hybrid key pair, merge the key pairs, and extract the X25519 public key.
+- The `calculatePublicKey()` function in Key.cpp calculates the public key from a given private key. It internally uses functions from Hybrid_key.hpp to generate the hybrid key pair, merge the key pairs, and extract the X25519 public key.
 
 The interaction between Key.cpp and Hybrid_key.hpp involves calling functions defined in Hybrid_key.hpp from Key.cpp to perform various operations related to hybrid key generation, key exchange, address generation, and public key calculation. Hybrid_key.hpp provides the necessary functions and data structures to support these operations, and Key.cpp utilizes them to implement the desired functionality.
 
