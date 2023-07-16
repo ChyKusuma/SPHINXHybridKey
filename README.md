@@ -59,7 +59,7 @@ The `SPHINXKey` namespace provides functions for generating key pairs, calculati
 This code provides a set of functions and structures to support hybrid key generation, key exchange, encryption, decryption, and other cryptographic operations.
 
 
-##### The interaction and collaboration between Key.cpp and [SPHINXHybridKey](https://github.com/ChyKusuma/SPHINXHybridKey) can be summarized as follows:
+#### The interaction and collaboration between Hybrid_Key.hpp and [SPHINXKey](https://github.com/ChyKusuma/SPHINXHybridKey) can be summarized as follows:
 
 - In Key.cpp, the generate_hybrid_keypair() function is defined, which is responsible for generating a hybrid key pair. It internally calls functions from Hybrid_key.hpp to generate the Kyber768 key pair (generate_kyber768_key_pair()) and the X25519 key pair (generate_x25519_key_pair()). It also generates the PKE key pair and initializes the PRNG for key generation. Finally, it returns the hybrid key pair.
 
