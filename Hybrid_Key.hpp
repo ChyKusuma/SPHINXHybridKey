@@ -201,7 +201,6 @@ namespace SPHINXHybridKey {
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
-    //
     // Function to derive the master private key and chain code 
     // These functions are essential in blockchain systems for key generation, derivation, and 
     // securing data.
@@ -210,7 +209,7 @@ namespace SPHINXHybridKey {
     // seed and serves as the starting point for generating child keys. The HMAC-SHA512 function
     // (deriveKeyHMAC_SHA512) is commonly used in cryptographic protocols for key derivation, message
     // authentication, and integrity checking.
-    //
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     std::pair<std::string, std::string> deriveMasterKeyAndChainCode(const std::string& seed) {
         std::string masterPrivateKey = deriveKeyHMAC_SWIFFTX("Sphinx seed", seed);
         std::string chainCode = deriveKeyHMAC_SWIFFTX("Sphinx chain code", seed);
@@ -248,9 +247,8 @@ namespace SPHINXHybridKey {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     // Function to finalized HMAC-SHA512 the data using SWIFFTX-512
-    // The SWIFFTX-512 hash function (hashSWIFFTX512) may be
-    // used for cryptographic operations requiring secure hashing, such as verifying data integrity 
-    // and generating digital signatures.
+    // The SWIFFTX-512 hash function (hashSWIFFTX512) may be used for cryptographic operations requiring 
+    // secure hashing, such as verifying data integrity and generating digital signatures.
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     std::string hashSWIFFTX512(const std::string& data) {
         // Convert the data to BitSequence array
