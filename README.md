@@ -8,27 +8,27 @@ This repository contains code for the SPHINXKey project, which is a `Generating 
 
 ## Components
 
-In the thrilling era of quantum computers, where we find ourselves in a `Super Position` between classical and quantum realms, the choice of a hybrid key exchange scheme combining X25519 and Kyber768 holds immense significance. Let's explore why this combination is the perfect fit.
+In the thrilling era of quantum computers, where we find ourselves in a `Super Position` between classical and quantum realms, the choice of a hybrid key exchange scheme combining `X25519` and `Kyber768` holds immense significance. Let's explore why this combination is the perfect fit.
 
-1. Embracing the Best of Both Worlds: X25519, a battle-tested and widely adopted algorithm, provides a solid foundation of proven security and efficient key generation. On the other hand, Kyber768 represents the cutting-edge of post-quantum cryptography, designed to resist attacks from powerful quantum computers. By combining these two exceptional algorithms, we enter a "Super Position" where we benefit from the strengths of both classical and quantum-resistant cryptography.
+1. Embracing the Best of Both Worlds: `X25519`, a battle-tested and widely adopted algorithm, provides a solid foundation of proven security and efficient key generation. On the other hand, `Kyber768` represents the cutting-edge of post-quantum cryptography, designed to resist attacks from powerful quantum computers. By combining these two exceptional algorithms, we enter a "Super Position" where we benefit from the strengths of both classical and quantum-resistant cryptography.
 
-2. Inspiration from Tech Giants: The widespread adoption of X25519 and Kyber768 by the larger tech community serves as our guiding light and inspiration. These algorithms have garnered trust and confidence from experts and industry leaders, paving the way for their integration into our hybrid scheme. By following in the footsteps of these role models, we embrace a solution that is not only innovative but also aligns with industry best practices.
+2. Inspiration from Tech Giants: The widespread adoption of `X25519` and `Kyber768` by the larger tech community serves as our guiding light and inspiration. These algorithms have garnered trust and confidence from experts and industry leaders, paving the way for their integration into our hybrid scheme. By following in the footsteps of these role models, we embrace a solution that is not only innovative but also aligns with industry best practices.
 
-In this era of immense technological possibilities, the combination of X25519 and Kyber768 in a hybrid key exchange scheme symbolizes our readiness to face the challenges presented by quantum computing. It demonstrates our commitment to leverage the proven track record of X25519 and the promising resilience of Kyber768. Together, these algorithms empower us to navigate the quantum landscape with confidence, ensuring the security and longevity of our cryptographic systems.
+In this era of immense technological possibilities, the combination of `X25519` and `Kyber768` in a hybrid key exchange scheme symbolizes our readiness to face the challenges presented by quantum computing. It demonstrates our commitment to leverage the proven track record of `X25519` and the promising resilience of `Kyber768`. Together, these algorithms empower us to navigate the quantum landscape with confidence, ensuring the security and longevity of our cryptographic systems.
 
 ### The Purpose 
 
-The combination of X25519 and Kyber768 in a hybrid key exchange is designed to harness the unique strengths of each algorithm, resulting in a more robust and versatile cryptographic solution.
+The combination of `X25519` and `Kyber768` in a hybrid key exchange is designed to harness the unique strengths of each algorithm, resulting in a more robust and versatile cryptographic solution.
 
-X25519 is an elliptic curve Diffie-Hellman (ECDH) key exchange algorithm based on the Curve25519 curve. It offers several advantages, including efficient key generation, compact key sizes, and resilience against various common attacks. X25519 excels in terms of both performance and security, making it an ideal choice for key exchange operations.
+`X25519` is an elliptic curve Diffie-Hellman (ECDH) key exchange algorithm based on the Curve25519 curve. It offers several advantages, including efficient key generation, compact key sizes, and resilience against various common attacks. X25519 excels in terms of both performance and security, making it an ideal choice for key exchange operations.
 
-On the other hand, Kyber768 is a post-quantum key encapsulation mechanism (KEM) that addresses the security challenges posed by quantum computers. It is based on the Learning With Errors (LWE) problem and provides strong resistance against attacks by quantum adversaries. Kyber768 offers a robust security guarantee in a post-quantum computing era when traditional cryptographic schemes may be vulnerable.
+On the other hand, `Kyber768` is a post-quantum key encapsulation mechanism (KEM) that addresses the security challenges posed by quantum computers. It is based on the Learning With Errors (LWE) problem and provides strong resistance against attacks by quantum adversaries. Kyber768 offers a robust security guarantee in a post-quantum computing era when traditional cryptographic schemes may be vulnerable.
 
-By combining X25519 and Kyber768 in a hybrid key exchange, we can leverage the efficiency and security benefits of X25519 while also incorporating the post-quantum resistance of Kyber768. This hybrid approach enables we to strike a balance between immediate performance needs and long-term security considerations. It is particularly advantageous in scenarios where both efficient key exchange and protection against future quantum threats are crucial.
+By combining `X25519` and `Kyber768` in a hybrid key exchange, we can leverage the efficiency and security benefits of `X25519` while also incorporating the post-quantum resistance of `Kyber768`. This hybrid approach enables we to strike a balance between immediate performance needs and long-term security considerations. It is particularly advantageous in scenarios where both efficient key exchange and protection against future quantum threats are crucial.
 
 ### Description and logic;
-- X25519 given 128-bit security level
-- Kyber-768 given (equal AES-192) mean 192-bit security level
+- `X25519` given 128-bit security level
+- `Kyber-768` given (equal AES-192) mean 192-bit security level
   
 If we `merged` them it means we will achieve security level nearly `320-bytes`, its lightweight enough.
 
