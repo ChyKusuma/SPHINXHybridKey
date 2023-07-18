@@ -26,7 +26,7 @@ On the other hand, Kyber768 is a post-quantum key encapsulation mechanism (KEM) 
 
 By combining X25519 and Kyber768 in a hybrid key exchange, we can leverage the efficiency and security benefits of X25519 while also incorporating the post-quantum resistance of Kyber768. This hybrid approach enables we to strike a balance between immediate performance needs and long-term security considerations. It is particularly advantageous in scenarios where both efficient key exchange and protection against future quantum threats are crucial.
 
-#### Description and logic;
+### Description and logic;
 - X25519 given 128-bit security level
 - Kyber-768 given (equal AES-192) mean 192-bit security level
   
